@@ -1,0 +1,87 @@
+<div>
+    <h2>Performance</h2>
+    <div class="p-grid">
+        <div class="p-md-6">
+            <h3>Sales</h3>
+            <p>Taylor Medical Center accounts for 10% of Xyngyta and 30% of Zerexime
+                TRx sales in your territory in the past 6 months.
+            </p>
+        </div>
+        <div class="p-md-6 right-content">
+            <h3>
+                <span class="sales-num">3/</span>
+                <span class="sales-num-outof">7</span>
+            </h3>
+            <p class="performance-mostvalue">
+                Taylor Medical Center is the 3rd most valuable account in
+                your territory.
+            </p>
+        </div>
+    </div>
+    <p>&nbsp;</p>
+    <div class="p-grid">
+        <div class="p-md-6">
+            <img src="https://d2v8ggac1o0f6z.cloudfront.net/gsc/QG1AII/69/01/06/69010626a39e4013a53b846eaf17abf9/images/account_v3/u208.png?token=fa34957cba811cae1d0e72cdbcb3cc07">
+            <div>
+                <p-dropdown [options]="durations" [(ngModel)]="selectedDuration" optionLabel="name"></p-dropdown>
+            </div>
+        </div>
+        <div class="p-md-6">
+            <img src="https://d2v8ggac1o0f6z.cloudfront.net/gsc/QG1AII/69/01/06/69010626a39e4013a53b846eaf17abf9/images/account_v3/u209.png?token=278dd3a1b24387bac0854747db5facd5">
+            <div>
+                <p-dropdown [options]="durations" [(ngModel)]="selectedDuration" optionLabel="name"></p-dropdown>
+            </div>
+        </div>
+    </div>
+    <p>&nbsp;</p>
+    <div class="p-grid">
+        <div class="p-md-6">
+            <div class="p-grid p-md-12 p-justify-between">
+                <span class="map-nrx left-content">Total NRx: 55</span>
+                <span class="right-content"><i class="fa fa-arrow-up"></i> 28% PTD</span>
+            </div>
+            <p-chart type="line" [data]="data1" [options]="options"></p-chart>
+        </div>
+        <div class="p-md-6">
+            <div class="p-grid p-md-12 p-justify-between">
+                <span class="map-nrx">Total NRx: 245</span>
+                <span class=""><i class="fa fa-arrow-up"></i> 10% PTD</span>
+            </div>
+            <p-chart type="line" [data]="data2" [options]="options"></p-chart>
+        </div>
+    </div>
+    <p>&nbsp;</p>
+    <div class="p-grid">
+        <div class="p-md-6">
+            <div class="p-grid p-md-12 p-justify-between">
+                <span class="map-nrx">Total TRx: 55</span>
+                <span class=""><i class="fa fa-arrow-up"></i> 28% PTD</span>
+            </div>
+            <p-chart type="line" [data]="data1" [options]="options"></p-chart>
+        </div>
+        <div class="p-md-6">
+            <div class="p-grid p-md-12 p-justify-between">
+                <span class="map-nrx">Total TRx: 245</span>
+                <span class=""><i class="fa fa-arrow-up"></i> 10% PTD</span>
+            </div>
+            <p-chart type="line" [data]="data2" [options]="options"></p-chart>
+        </div>
+    </div>
+    <p>&nbsp;</p>
+    <div class="p-grid">
+        <div class="p-md-6">
+            <div class="p-grid p-md-12 p-justify-between">
+                <span class="map-nrx">Market Share: 55</span>
+                <span class=""><i class="fa fa-arrow-up"></i> 28% PTD</span>
+            </div>
+            <p-chart type="line" [data]="data1" [options]="options"></p-chart>
+        </div>
+        <div class="p-md-6">
+            <div class="p-grid p-md-12 p-justify-between">
+                <span class="map-nrx">Market Share: 245</span>
+                <span class=""><i class="fa fa-arrow-up"></i> 10% PTD</span>
+            </div>
+            <p-chart type="line" [data]="data2" [options]="options"></p-chart>
+        </div>
+    </div>
+</div>

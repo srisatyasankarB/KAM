@@ -1,0 +1,86 @@
+<div class="ativitytab">
+    <div class="p-grid">
+        <div class="p-md-6">
+            <h2>Activity</h2>
+        </div>
+        <div class="p-md-6">
+            <div class="p-grid p-justify-end p-align-center">
+                <h3 class="right-content" style="margin-right: 10px;">17<br>Objectives</h3>
+                7 Achieved<br>
+                6 In progress<br>
+                4 Delayed
+            </div>
+        </div>
+    </div>
+    <div class="p-grid">
+        <div class="p-md-6">
+            <h3>Completion of Initiatives</h3>
+            <p-chart type="doughnut" [data]="pie"></p-chart>
+            <p>You've completed 2 out of 5 initatives. Your most recent completion was on May 30, 2018.</p>
+        </div>
+        <div class="p-md-6">
+            <h3>Recent Interactions</h3>
+            <p-checkbox name="groupname" value="val1" label="My interactions only"></p-checkbox>
+            <p>&nbsp;</p>
+            <p-table  [responsive]="true">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>Date</th>
+                        <th>Type</th>
+                        <th>Representative</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body">
+                    <tr>
+                        <td>09/11/2018</td>
+                        <td>Call</td>
+                        <td>Jia Girard</td>
+                    </tr>
+                    <tr>
+                        <td>09/11/2018</td>
+                        <td>Sample</td>
+                        <td>Russel Peter</td>
+                    </tr>
+                    <tr>
+                        <td>09/11/2018</td>
+                        <td>Call</td>
+                        <td>John Trovolta</td>
+                    </tr>
+                </ng-template>
+            </p-table>
+            <p>&nbsp;</p>
+            <a href="#" class="d-flex justify-content-end">View Details</a>
+        </div>
+    </div>
+    <div class="p-grid">
+        <div class="p-md-12">
+            <h3>Initiatives</h3>
+            <p-table class="">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>Strategy</th>
+                        <th>Tactic Owner</th>
+                        <th>Due Date</th>
+                        <th>Completion Status</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body">
+                </ng-template>
+            </p-table>
+            <p>&nbsp;</p>
+            <p-table class="">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>Stakeholder</th>
+                        <th>Cat.</th>
+                        <th>Task Details</th>
+                        <th>Overall Objectives</th>
+                        <th>Task Status</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body">
+                </ng-template>
+            </p-table>
+        </div>
+    </div>
+</div>

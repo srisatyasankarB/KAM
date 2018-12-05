@@ -1,0 +1,78 @@
+/* You can add global styles to this file, and also import other style files */
+.topbar{
+}
+
+.right-content{
+    text-align: right;
+}
+
+.left-content{
+    text-align: left;
+}
+
+.address-color{
+    color: #327F97 !important;
+}
+
+.insight{
+    padding: 10px;
+    border-bottom: 1px solid #c8c8c8;
+}
+
+.insight-date{
+    padding: 2px;
+    font-size: 75%;
+}
+
+.account-detail{
+    padding: 10px;
+}
+
+.account-label{
+    font-size: 75%;
+}
+
+.affiliation{
+    padding: 10px;
+}
+
+.affiliation-label{
+    font-size: 75%;
+}
+
+.affiliation-link{
+    padding: 2px;
+}
+
+.physician-link{
+    padding: 2px;
+}
+
+.affiliation-more{
+    padding-top: 10px;
+}
+
+.accountteam{
+    padding: 10px;
+    border-bottom: 1px solid #c8c8c8;
+}
+
+.accountteam-more{
+    padding-top: 10px;
+}
+
+.performance-mostvalue{
+    color: rgba(45, 41, 38, 0.6);
+    font-style: oblique;
+    font-weight: bold;
+}
+
+.sales-num-outof{
+    font-weight: bold;
+    font-size: 50%;
+}
+
+.sales-num{
+    font-weight: bold;
+    font-size: 150%;
+}
