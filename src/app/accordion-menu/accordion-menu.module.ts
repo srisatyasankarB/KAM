@@ -12,6 +12,7 @@ import { AccountTeamComponent } from './account-team/account-team.component';
 import {AccordionModule} from 'primeng/accordion';
 import {ProgressBarModule} from 'primeng/progressbar';
 import { TableModule } from 'primeng/table';
+import {DialogModule} from 'primeng/dialog';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { TableModule } from 'primeng/table';
     AccordionModule,
     ProgressBarModule,
     TableModule,
+    DialogModule
   ],
   exports:[ AccordionMenuComponent, 
     InsightsComponent, 
