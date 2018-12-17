@@ -10,6 +10,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {CardModule} from 'primeng/card';
 import { AccordionMenuModule } from './accordion-menu/accordion-menu.module';
 import { TabsMenuModule } from './tabs-menu/tabs-menu.module';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { TabsMenuModule } from './tabs-menu/tabs-menu.module';
     
     AccordionMenuModule,
     TabsMenuModule,
+    environment.veevaModule
   ],
   providers: [],
   bootstrap: [AppComponent]

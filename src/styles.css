@@ -21,7 +21,7 @@
 
 .insight-date{
     padding: 2px;
-    font-size: 75%;
+    font-size: 80%;
 }
 
 .account-detail{
@@ -29,7 +29,7 @@
 }
 
 .account-label{
-    font-size: 75%;
+    font-size: 80%;
 }
 
 .affiliation{
@@ -37,15 +37,18 @@
 }
 
 .affiliation-label{
-    font-size: 75%;
+    font-size: 80%;
+    margin-bottom: 10px;
 }
 
 .affiliation-link{
-    padding: 2px;
+    padding: 7px;
+    font-weight: bold;
 }
 
 .physician-link{
-    padding: 2px;
+    padding: 7px;
+    font-weight: bold;
 }
 
 .affiliation-more{

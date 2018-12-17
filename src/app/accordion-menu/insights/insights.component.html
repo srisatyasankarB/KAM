@@ -7,34 +7,28 @@
     <div class="insight-content">New Clinical Trial initiated for Dasaturumab for 3L HER2+ patients. Dr. Wayne Martinwill be the chief investigator at Taylor Medical Center.</div>
 </div>
 <div>
-        <p-dialog header="All Insights" [(visible)]="display" [modal]="true" [responsive]="true" [width]="350" [minWidth]="200" [minY]="70" 
-         [baseZIndex]="10000">
-         <div>
-         <div class="insight">
-                <div class="insight-date">May 7, 2018</div>
-                <div class="insight-content">4 new patients have been diagnosed in the last week.</div>
-            </div>
-            <div class="insight">
-                    <div class="insight-date">April 30, 2018</div>
-                    <div class="insight-content">New Clinical Trial initiated for Dasaturumab for 3L HER2+ patients. Dr. Wayne Martinwill be the chief investigator at Taylor Medical Center.</div>
-                </div>
-                <div class="insight">
-                        <div class="insight-date">April 24, 2018</div>
-                        <div class="insight-content">Key stakeholder, Dr. Hyeon Sung-hoon, in your account has been identified.</div>
-                    </div>
-                    <div class="insight">
-                            <div class="insight-date">April 15, 2018</div>
-                            <div class="insight-content">Dr. Winston Jennings has recently published an article in the American Medical Journal.</div>
-                        </div>
-                        <div class="insight">
-                                <div class="insight-date">April 07, 2018</div>
-                                <div class="insight-content">Mariema Initiative has become an investor for this account.</div>
-                            </div>
-       </div>
-</p-dialog>
-
-           
-            <a type="button" (click)="showDialog()" pButton icon="pi pi-info-circle" class="p-grid p-justify-end" style="padding: 10px;cursor:pointer;" label="Show">View All</a>
-
-  
+    <a type="button" (click)="showDialog()" pButton icon="pi pi-info-circle" class="p-grid p-justify-end" style="padding: 10px;cursor:pointer;" label="Show">View All</a>
 </div>
+
+<p-dialog header="All Insights" [(visible)]="display" [modal]="true" [responsive]="true" [baseZIndex]="10000">
+    <div class="insight">
+       <div class="insight-date">May 7, 2018</div>
+       <div class="insight-content">4 new patients have been diagnosed in the last week.</div>
+   </div>
+   <div class="insight">
+       <div class="insight-date">April 30, 2018</div>
+       <div class="insight-content">New Clinical Trial initiated for Dasaturumab for 3L HER2+ patients. Dr. Wayne Martinwill be the chief investigator at Taylor Medical Center.</div>
+   </div>
+   <div class="insight">
+       <div class="insight-date">April 24, 2018</div>
+       <div class="insight-content">Key stakeholder, Dr. Hyeon Sung-hoon, in your account has been identified.</div>
+   </div>
+   <div class="insight">
+       <div class="insight-date">April 15, 2018</div>
+       <div class="insight-content">Dr. Winston Jennings has recently published an article in the American Medical Journal.</div>
+   </div>
+   <div class="insight">
+       <div class="insight-date">April 07, 2018</div>
+       <div class="insight-content">Mariema Initiative has become an investor for this account.</div>
+   </div>
+</p-dialog>

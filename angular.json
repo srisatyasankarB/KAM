@@ -78,6 +78,14 @@
                   "maximumError": "5mb"
                 }
               ]
+            },
+            "mock": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.mock.ts"
+                }
+              ]
             }
           }
         },
@@ -89,6 +97,9 @@
           "configurations": {
             "production": {
               "browserTarget": "TylorMedicalCenter:build:production"
+            },
+            "mock": {
+              "browserTarget": "TylorMedicalCenter:build:mock"
             }
           }
         },

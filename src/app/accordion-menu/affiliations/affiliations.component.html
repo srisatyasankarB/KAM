@@ -1,40 +1,48 @@
 <div class="affiliation">
     <div class="affiliation-label">Affiliated Accounts</div>
-    <div class="affiliation-link">
-        <i class="fa fa-h-square fa-lg"></i>
-        &nbsp;Berwyn Hospital
-    </div>
-    <div class="affiliation-link">
-        <i class="fa fa-h-square fa-lg"></i>
-        &nbsp;Rochester Center
-    </div>
-    <div class="affiliation-link">
-        <i class="fa fa-h-square fa-lg"></i>
-        &nbsp;Brocklehurst Medical
-    </div>
-    <div class="affiliation-link">
-        <i class="fa fa-h-square fa-lg"></i>
-        &nbsp;Helen Burns Hospital
+    <div *ngFor="let account of accounts | slice:0:5">        
+        <div class="affiliation-link p-grid p-align-center">
+            <!-- <i class="fa fa-h-square fa-lg"></i> -->
+            <img [src]="account.img"/>
+            &nbsp;{{account.name}}
+        </div>
     </div>
 </div>
-<div class="affiliation-more p-grid p-justify-end"><a href="#">View 2 more Accounts</a></div>
+<div *ngIf="accounts.length > 5" class="affiliation-more p-grid p-justify-end">
+    <a (click)="showAccountsDialog()">View {{accounts.length - 5}} more Accounts</a>
+</div>
+
+<p-dialog header="All Affiliated Accounts" [(visible)]="displayAccounts" [modal]="true" [responsive]="true" [baseZIndex]="10000">
+    <div *ngFor="let account of accounts">        
+        <div class="affiliation-link p-grid p-align-center">
+            <!-- <i class="fa fa-h-square fa-lg"></i> -->
+            <img [src]="account.img"/>
+            &nbsp;{{account.name}}
+        </div>
+    </div>
+</p-dialog>
+
+
 <div class="affiliation">
     <div class="affiliation-label">Affiliated Physicians</div>
-    <div class="physician-link">
-        <i class="fa fa-user-md fa-lg"></i>
-        &nbsp;Dr. Hanna Li
-    </div>
-    <div class="physician-link">
-        <i class="fa fa-user-md fa-lg"></i>
-        &nbsp;Dr. Hanna Li
-    </div>
-    <div class="physician-link">
-        <i class="fa fa-user-md fa-lg"></i>
-        &nbsp;Dr. Hanna Li
-    </div>
-    <div class="physician-link">
-        <i class="fa fa-user-md fa-lg"></i>
-        &nbsp;Dr. Hanna Li
+    <div *ngFor="let physician of physicians | slice:0:5">        
+        <div class="physician-link p-grid p-align-center">
+            <!-- <i class="fa fa-user-md fa-lg"></i> -->
+            <img [src]="physician.img"/>
+            &nbsp;{{physician.name}}
+        </div>
     </div>
 </div>
-<div class="affiliation-more p-grid p-justify-end"><a href="#">View 5 more Physicians</a></div>
+<div *ngIf="physicians.length > 5" class="affiliation-more p-grid p-justify-end">
+    <a (click)="showPhysiciansDialog()">View {{physicians.length - 5}} more Physicians</a>
+</div>
+
+<p-dialog header="All Affiliated Physicians" [(visible)]="displayPhysicians" [modal]="true" [responsive]="true" [baseZIndex]="10000">
+    <div *ngFor="let physician of physicians">
+        <div class="physician-link p-grid p-align-center">
+            <!-- <i class="fa fa-user-md fa-lg"></i> -->
+            <img [src]="physician.img"/>
+            &nbsp;{{physician.name}}
+        </div>
+    </div>
+</p-dialog>
