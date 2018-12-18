@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AccountTeamService } from './account-team.service';
 
 @Component({
   selector: 'tmc-account-team',
@@ -6,10 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./account-team.component.css']
 })
 export class AccountTeamComponent implements OnInit {
+  accounts: Array<any>;
 
-  constructor() { }
+  constructor(private service: AccountTeamService) { }
 
   ngOnInit() {
+    this.service.getAccountTeamsData().subscribe((data: any) => {
+      this.accounts = data.accountTeams;
+    });
+  }
+
+  displayAccountTeam: boolean = false;
+
+  showAccountTeamDialog() {
+      this.displayAccountTeam = true;
   }
 
 }

@@ -6,6 +6,15 @@ import { Observable, of } from 'rxjs';
   providedIn: 'root'
 })
 export class VeevaMockService implements IVeevaService {
+  getAccountTeams(): Observable<any> {
+    return of([
+      {id:1, name: "Almira Merlin", role:"Sales Representative", email: "amerlin@nefit.com", phone:"301 253 9074", img: "assets/images/u703.png"},
+      {id:1, name: "Gene Vasquez", role:"Key Account Manager", email: "gvasquez@nefit.com", phone:"209 871 4000", img: "assets/images/u716.png"},
+      {id:1, name: "Mark Seward", role:"Nurse Educator", email: "mseward@nefit.com", phone:"412 673 9384", img: "assets/images/u718.png"},
+      {id:1, name: "Eponine Sam", role:"Medical Science Liaison", email: "esam@nefit.com", phone:"537 368 0584", img: "assets/images/u711.png"},
+      {id:1, name: "Gene Sam", role:"Sales Educator", email: "gsam@nefit.com", phone:"537 368 0444", img: "assets/images/u716.png"},
+    ]);
+  }
 
   getInsights() : Observable<any> {
     return of([
