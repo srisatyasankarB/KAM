@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,inject } from '@angular/core';
+import { InsightsService } from './insights.service';
 
 @Component({
   selector: 'tmc-insights',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./insights.component.css']
 })
 export class InsightsComponent implements OnInit {
+  insights: Array<any> = [{}];
 
-  constructor() { }
+  constructor(private InsightsService: InsightsService) { }
 
   ngOnInit() {
+    this.InsightsService.getInsightsData().subscribe((data: any) => {
+       this.insights = data.insights;
+    });
   }
 
   display: boolean = false;
