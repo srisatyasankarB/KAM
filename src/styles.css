@@ -109,11 +109,20 @@ body{
     height: 25px;
     width: 25px;
     float: right;
+}
+
+.stakeholder-kol-text{
     color: white;
     font-size: 80%;
+    font-style: normal !important;
+    padding-left: 3px;
 }
 
 .stakeholder-more {
     padding-top: 10px;
     cursor: pointer;
+}
+
+.border-btm{
+    border-bottom: 1px solid #c8c8c8;
 }

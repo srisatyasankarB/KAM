@@ -14,7 +14,7 @@ export class VeevaMockService implements IVeevaService {
       {id:3, date: "April 24, 2018", info: "Key stakeholder, Dr. Hyeon Sung-hoon, in your account has been identified."},
       {id:4, date: "April 15, 2018", info: "Dr. Winston Jennings has recently published an article in the American Medical Journal."},
       {id:5, date: "April 07, 2018", info: "Mariema Initiative has become an investor for this account."}
-        ]);
+    ]);
   }
 
   getStakeholders(): Observable<any> {

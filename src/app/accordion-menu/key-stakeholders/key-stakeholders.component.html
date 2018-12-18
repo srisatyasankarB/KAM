@@ -1,9 +1,9 @@
 <div class="stakeholder">
-    <div *ngFor="let stakeholder of stakeholders" class="p-grid">
+    <div *ngFor="let stakeholder of stakeholders" class="p-grid border-btm">
         <div class="p-md-4">
             <img [src]="stakeholder.img"/>
         </div>
-        <div class="p-md-8">
+        <div class="p-md-8" style="padding-top: 15px;">
             <div class="stakeholder-name">{{stakeholder.name}}, {{stakeholder.title}}</div>
             <div class="stakeholder-role">{{stakeholder.role}}</div>
             <div class="stakeholder-contacted">Last Contacted: {{stakeholder.contactedOn.toDateString()}}</div>
@@ -32,7 +32,10 @@
                 <td>
                     <div class="stakeholder-name">{{stakeholder.name}}, {{stakeholder.title}}</div>
                     <div class="stakeholder-role">
-                        {{stakeholder.role}}<div *ngIf="stakeholder.kol" class="stakeholder-kol">KOL</div>
+                        {{stakeholder.role}}
+                        <div *ngIf="stakeholder.kol" class="stakeholder-kol">
+                            <span class="stakeholder-kol-text">KOL</span>
+                        </div>
                     </div>
                     <div class="stakeholder-contacted">Last Contacted: {{stakeholder.contactedOn.toDateString()}}</div>
                 </td>
