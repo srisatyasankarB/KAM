@@ -6,29 +6,24 @@ import { Observable, of } from 'rxjs';
   providedIn: 'root'
 })
 export class VeevaService implements IVeevaService {
+  getAccountTeams(): Observable<any> {
+    throw new Error("Method not implemented.");
+  }
   
   getInsights(): Observable<any>{
-    return of([{
-      
-    }]);
+    throw new Error("Method not implemented.");
   }
 
   getPhysicians(): Observable<any>{
-    return of([{
-      
-    }]);
+    throw new Error("Method not implemented.");
   }
 
   getAccounts(): Observable<any>{
-    return of([{
-      
-    }]);
+    throw new Error("Method not implemented.");
   }
 
   getStakeholders(): Observable<any> {
-    return of([{
-      
-    }]);
+    throw new Error("Method not implemented.");
   }
 
 }

@@ -1,27 +1,30 @@
 <div class="accountteam">
-    <div class="p-grid">
+    <div class="p-grid border-btm" *ngFor="let account of accounts | slice:0:4" style="margin-bottom: 5px;">
         <div class="p-md-4">
-                <img src="assets/images/u703.png">
+                <img [src]="account.img">
         </div>
         <div class="p-md-8">
-            <div class="account-name">Almira Merlin</div>
-            <div class="account-role">Sales Representative</div>
-            <div class="account-email">amerlin@nefit.com</div>
-            <div class="account-phone">phone: 301 253 9074</div>
+            <div class="account-name">{{account.name}}</div>
+            <div class="account-role">{{account.role}}</div>
+            <div class="account-email">{{account.email}}</div>
+            <div>Phone: <span class="account-phone">{{account.phone}}</span></div>
         </div>
     </div>
 </div>
-<div class="accountteam">
-    <div class="p-grid">
+<div *ngIf="accounts.length > 4" class="accountteam-more p-grid p-justify-end">
+    <a (click)="showAccountTeamDialog()">View {{accounts.length - 4}} more Team Members</a>
+</div>
+
+<p-dialog header="Account Team" [(visible)]="displayAccountTeam" [modal]="true" [responsive]="true" [baseZIndex]="10000">
+    <div class="p-grid border-btm" *ngFor="let account of accounts" style="margin-bottom: 5px;">
         <div class="p-md-4">
-                <img src="assets/images/u716.png">
+                <img [src]="account.img">
         </div>
         <div class="p-md-8">
-            <div class="account-name">Gene Vasquez</div>
-            <div class="account-role">Key Account Manager</div>
-            <div class="account-email">gvasquez@nefit.com</div>
-            <div class="account-phone">phone: 209 871 4000</div>
+            <div class="account-name">{{account.name}}</div>
+            <div class="account-role">{{account.role}}</div>
+            <div class="account-email">{{account.email}}</div>
+            <div>Phone: <span class="account-phone">{{account.phone}}</span></div>
         </div>
     </div>
-</div>
-<div class="accountteam-more p-grid p-justify-end"><a href="#">View Details</a></div>
+</p-dialog>

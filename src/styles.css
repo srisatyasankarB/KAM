@@ -62,11 +62,10 @@ body{
 
 .accountteam{
     padding: 10px;
-    border-bottom: 1px solid #c8c8c8;
 }
 
 .accountteam-more{
-    padding-top: 10px;
+    cursor: pointer;
 }
 
 .performance-mostvalue{
@@ -85,14 +84,14 @@ body{
     font-size: 150%;
 }
 
-.stakeholder-name{
+.stakeholder-name, .account-name{
     font-weight: 700;
     font-style: normal;
     font-size: 16px;
     color: #327F97;
 }
 
-.stakeholder-role{
+.stakeholder-role, .account-role{
     font-weight: 400;
     font-style: italic;
 }
@@ -121,6 +120,14 @@ body{
 .stakeholder-more {
     padding-top: 10px;
     cursor: pointer;
+}
+
+.account-email{
+    color: #327F97;
+}
+
+.account-phone{
+    color: #327F97;
 }
 
 .border-btm{
