@@ -20,7 +20,7 @@ import { environment } from 'src/environments/environment';
     BrowserModule,
     FormsModule,
     BrowserAnimationsModule,
-    AppRoutingModule,
+    //AppRoutingModule,
 
     CardModule,
     

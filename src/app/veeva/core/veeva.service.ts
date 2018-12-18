@@ -25,4 +25,10 @@ export class VeevaService implements IVeevaService {
     }]);
   }
 
+  getStakeholders(): Observable<any> {
+    return of([{
+      
+    }]);
+  }
+
 }

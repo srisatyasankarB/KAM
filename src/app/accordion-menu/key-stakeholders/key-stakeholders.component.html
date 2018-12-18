@@ -1,21 +1,46 @@
 <div class="stakeholder">
-    <p-table>
+    <div *ngFor="let stakeholder of stakeholders" class="p-grid">
+        <div class="p-md-4">
+            <img [src]="stakeholder.img"/>
+        </div>
+        <div class="p-md-8">
+            <div class="stakeholder-name">{{stakeholder.name}}, {{stakeholder.title}}</div>
+            <div class="stakeholder-role">{{stakeholder.role}}</div>
+            <div class="stakeholder-contacted">Last Contacted: {{stakeholder.contactedOn.toDateString()}}</div>
+        </div>
+    </div>
+</div>
+<div class="stakeholder-more p-grid p-justify-end">
+    <a (click)="showStakeholdersDialog()">View Details</a>
+</div>
+
+<p-dialog header="Key Stakeholders" [(visible)]="displayStakeholders" [modal]="true" [responsive]="true" [baseZIndex]="10000">
+    <p-table [value]="stakeholders">
         <ng-template pTemplate="header">
             <tr>
-                <th>Stakeholders</th>
-                <th>Date Last Contacted</th>
+                <th>Influence</th>
+                <th>Stakeholder Name &amp; Role</th>
+                <th>Programs</th>
+                <th>Sentiment</th>
+                <th>Access</th>
+                <th>Called by others?</th>
             </tr>
         </ng-template>
-        <ng-template pTemplate="tbody">
+        <ng-template pTemplate="body" let-stakeholder>
             <tr>
-                <td>Calliope Chapman, MD<br>Head of Oncology</td>
-                <td>05/24/18</td>
-            </tr>
-            <tr>
-                <td>Calliope Chapman, MD<br>Head of Oncology</td>
-                <td>05/24/18</td>
+                <td>{{stakeholder.influence}}</td>
+                <td>
+                    <div class="stakeholder-name">{{stakeholder.name}}, {{stakeholder.title}}</div>
+                    <div class="stakeholder-role">
+                        {{stakeholder.role}}<div *ngIf="stakeholder.kol" class="stakeholder-kol">KOL</div>
+                    </div>
+                    <div class="stakeholder-contacted">Last Contacted: {{stakeholder.contactedOn.toDateString()}}</div>
+                </td>
+                <td>{{stakeholder.programs}}</td>
+                <td><img [src]="stakeholder.sentiment"></td>
+                <td>{{stakeholder.access}}</td>
+                <td>{{stakeholder.calledByOthers}}</td>
             </tr>
         </ng-template>
     </p-table>
-</div>
-<div class="stakeholder-more p-grid p-justify-end"><a href="#">View Details</a></div>
+</p-dialog>
