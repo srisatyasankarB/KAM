@@ -16,6 +16,11 @@ export class VeevaMockService implements IVeevaService {
       {id:5, date: "April 07, 2018", info: "Mariema Initiative has become an investor for this account."}
     ]);
   }
+  getAccountProf() : Observable<any> {
+    return of([
+      {id:1, accountType: "Top 10", mission: "Grow to Top 5",profitStatus:"Non Profit",providerControl :"Commercial",specialtyPharmacy:"80",strengths:"Population density growing in area & influx of physicians.",weaknesses:"None observed",opportunities:"None observed",threats:"Competitor providing discounts",beds:[{id:2, licenseBeds: "120", censusBeds: "150",staffedBeds:"180"}]},
+       ]);
+  }
 
   getStakeholders(): Observable<any> {
     return of([

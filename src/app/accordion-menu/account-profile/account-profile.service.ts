@@ -3,19 +3,19 @@ import { VEEVA_SERVICE, IVeevaService } from 'src/app/veeva/iveeva.service';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-
 @Injectable({
   providedIn: 'root'
 })
-export class InsightsService {
-
+export class AccountProfileService {
   constructor(@Inject(VEEVA_SERVICE) private veevaService: IVeevaService) {
   }
-  getInsightsData(): Observable<any> {
-    return this.veevaService.getInsights().pipe(map(result=>{
+  getAccountProfData():Observable<any>{
+    return this.veevaService.getAccountProf().pipe(map(result =>{
       return {
-       insights:result
-      }
-    }));
+        accountProf:result
+       }
+    }))
+
   }
+  
 }

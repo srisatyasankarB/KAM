@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AccountProfileService} from "./account-profile.service";
+
 
 @Component({
   selector: 'tmc-account-profile',
@@ -6,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./account-profile.component.css']
 })
 export class AccountProfileComponent implements OnInit {
-
-  constructor() { }
+  accountProf: Array<any> = [{}];
+  accountProfTd: Array<any> = [{}];
+  cols: any[];
+  constructor(private AccountProfileService: AccountProfileService) { }
 
   ngOnInit() {
+    this.AccountProfileService.getAccountProfData().subscribe((data: any) => {
+      this.accountProf = data.accountProf;
+   
+       });
   }
 
 }

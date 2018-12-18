@@ -1,18 +1,19 @@
-<div class="account-detail">
+
+<div class="account-detail" >
     <div class="account-label">Account Type</div>
-    <div class="account-content">Top 10</div>
+    <div class="account-content">{{accountProf[0].accountType}}</div>
 </div>
 <div class="account-detail">
     <div class="account-label">Mission</div>
-    <div class="account-content">Grow to Top 5</div>
+    <div class="account-content">{{accountProf[0].mission}}</div>
 </div>
 <div class="account-detail">
     <div class="account-label">Profit Status</div>
-    <div class="account-content">Non Profit</div>
+    <div class="account-content">{{accountProf[0].mission}}</div>
 </div>
 <div class="account-detail">
     <div class="account-label">Provider Control</div>
-    <div class="account-content">Commercial</div>
+    <div class="account-content">{{accountProf[0].mission}}</div>
 </div>
 <div class="account-detail">
     <i class="fa fa-check-square-o"></i>
@@ -29,12 +30,12 @@
 <div class="account-detail">
     <span class="account-label">% Specialty Pharmacy</span>
     <span class="account-content">
-        <p-progressBar [value]="50"></p-progressBar>
+        <p-progressBar [value]="accountProf[0].specialtyPharmacy"></p-progressBar>
     </span>
 </div>
 <div class="account-detail">
     <span class="account-table">
-        <p-table>
+        <p-table  [value]="accountProf[0].beds">
             <ng-template pTemplate="header">
                 <tr>
                     <th>License Beds</th>
@@ -42,29 +43,29 @@
                     <th>Staffed Beds</th>
                 </tr>
             </ng-template>
-            <ng-template pTemplate="body">
+            <ng-template pTemplate="body" let-col>
                 <tr>
-                    <td>80</td>
-                    <td>50</td>
-                    <td>20</td>
-                </tr>
+                    <td>{{col.licenseBeds}}</td>
+                    <td>{{col.censusBeds}}</td>
+                    <td>{{col.staffedBeds}}</td>
+                    </tr>
             </ng-template>
         </p-table>
     </span>
 </div>
 <div class="account-detail">
     <div class="account-label">Strengths</div>
-    <div class="account-content">Population density growing in area & influx of physicians.</div>
+    <div class="account-content">{{accountProf[0].strengths}}</div>
 </div>
 <div class="account-detail">
     <div class="account-label">Weaknesses</div>
-    <div class="account-content">None observed</div>
+    <div class="account-content">{{accountProf[0].weaknesses}}</div>
 </div>
 <div class="account-detail">
     <div class="account-label">Opportunities</div>
-    <div class="account-content">None observed</div>
+    <div class="account-content">{{accountProf[0].opportunities}}</div>
 </div>
 <div class="account-detail">
     <div class="account-label">Threats</div>
-    <div class="account-content">Competitor providing discounts</div>
+    <div class="account-content">{{accountProf[0].threats}}s</div>
 </div>

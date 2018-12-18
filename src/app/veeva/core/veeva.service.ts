@@ -6,6 +6,9 @@ import { Observable, of } from 'rxjs';
   providedIn: 'root'
 })
 export class VeevaService implements IVeevaService {
+  getAccountProf() {
+    throw new Error("Method not implemented.");
+  }
   
   getInsights(): Observable<any>{
     return of([{
