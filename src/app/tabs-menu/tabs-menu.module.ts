@@ -12,6 +12,8 @@ import {TableModule} from 'primeng/table';
 import {ChartModule} from 'primeng/chart';
 import {DropdownModule} from 'primeng/dropdown';
 import {CheckboxModule} from 'primeng/checkbox';
+import {AccordionModule} from 'primeng/accordion';
+import {PanelModule} from 'primeng/panel';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,9 @@ import {CheckboxModule} from 'primeng/checkbox';
     ChartModule,
     DropdownModule,
     CheckboxModule,
+    AccordionModule,
+    CardModule,
+    PanelModule
   ],
   exports:[
     PerformanceTabComponent, 

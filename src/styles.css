@@ -133,3 +133,31 @@ body{
 .border-btm{
     border-bottom: 1px solid #c8c8c8;
 }
+
+.padding-btm{
+    padding-bottom: 10px;
+}
+
+.margin-btm{
+    margin-bottom: 10px;
+}
+
+.init-header-heading{
+    font-size: 80%;
+}
+
+.initiatives .ui-panel{
+    padding-bottom: 2px !important;
+    border-radius: 0px;
+}
+
+.initiatives .ui-panel .ui-panel-titlebar{
+    border: 1px solid #ddd;
+    background-color: #fff;
+    color: #333333;
+    padding-bottom: 0px;
+}
+
+.initiatives .ui-panel .ui-panel-content{
+    background-color: rgba(247, 247, 247, 1);
+}
