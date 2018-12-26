@@ -6,7 +6,8 @@ import { Observable, of } from 'rxjs';
   providedIn: 'root'
 })
 export class VeevaService implements IVeevaService {
-getPerformanc(): Observable<any> {
+  
+  getPerformanc(): Observable<any> {
     throw new Error("Method not implemented.");
   }
 
