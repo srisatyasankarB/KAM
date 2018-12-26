@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivityTabService } from './activity-tab.service';
 
 @Component({
   selector: 'tmc-activity-tab',
@@ -8,9 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class ActivityTabComponent implements OnInit {
   pie: any;
 
-  constructor() { 
-    
-
+  constructor(private service: ActivityTabService) { 
   this.pie = {
     labels: ['Completed','Remaining'],
     datasets: [
@@ -24,7 +23,14 @@ export class ActivityTabComponent implements OnInit {
     };
   }
 
+  initiatives: Array<any> = [{}];
+  interactions: Array<any> = [{}];
+
   ngOnInit() {
+    this.service.getActivitiesData().subscribe((data: any) => {
+      this.initiatives = data.initiatives;
+      this.interactions = data.interactions;
+    });
   }
 
 }

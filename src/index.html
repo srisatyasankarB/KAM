@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8">
   <title>Tylor Medical Center</title>
-  <!-- <base href="/00DP000000037E8MAI/a3UP0000000GI8rMAG/"> -->
-  <base href="/">
+  <script>
+    document.write('<base href="' + String(document.location).replace(String(document.location).substr(String(document.location).indexOf("index.html")), '') + '">')
+  </script>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">

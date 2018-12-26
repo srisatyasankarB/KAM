@@ -6,6 +6,38 @@ import { Observable, of } from 'rxjs';
   providedIn: 'root'
 })
 export class VeevaMockService implements IVeevaService {
+  getInteractions(): Observable<any> {
+    return of([
+      {date: new Date(2018, 10, 1), type: "Call", representative: "Jai Girard"},
+      {date: new Date(2018, 10, 2), type: "Sample", representative: "Campbell De Veen"},
+      {date: new Date(2018, 10, 3), type: "Email", representative: "Vijay Elzinga"},
+      {date: new Date(2018, 10, 4), type: "Speaker Program", representative: "Alfred Albertson"},
+    ]);
+  }
+
+  getInitiatives(): Observable<any> {
+    return of([
+      {id:1, strategy: "Coordinate functions and expertise with all internal stakeholders", owner:"Fedir Trucco", due: new Date(2018, 11, 1), status: "assets/images/u465.png",
+      tasks:[ 
+        {task: "Email new Head of Oncology", assignedTo: "Garth Jordá", assignedOn: new Date(2018, 10, 1), status: "assets/images/u465.png"},
+        {task: "Meet with Dr. Anthony Bennet and Dr. Xia Nikolaev for interviews", assignedTo: "Mark Seward", assignedOn: new Date(2018, 10, 2), status: "assets/images/u467.png"},
+        {task: "Profile the new Pharmacy department", assignedTo: "Gwalchmei Babin", assignedOn: new Date(2018, 10, 3), status: "assets/images/u467.png"},
+      ]},
+      {id:2, strategy: "Establish governance system for 2018 initiatives", owner:"Josephine Sung", due: new Date(2018, 11, 2), status: "assets/images/u468.png",
+      tasks:[ 
+        {task: "Email new Head of Oncology", assignedTo: "Garth Jordá", assignedOn: new Date(2018, 10, 1), status: "assets/images/u465.png"},
+        {task: "Meet with Dr. Anthony Bennet and Dr. Xia Nikolaev for interviews", assignedTo: "Mark Seward", assignedOn: new Date(2018, 10, 2), status: "assets/images/u467.png"},
+        {task: "Profile the new Pharmacy department", assignedTo: "Gwalchmei Babin", assignedOn: new Date(2018, 10, 3), status: "assets/images/u467.png"},
+      ]},
+      {id:3, strategy: "Grow sales by 25% this quarter vs last quarter", owner:"Helena Garth", due: new Date(2018, 11, 3), status: "assets/images/u467.png",
+      tasks:[ 
+        {task: "Email new Head of Oncology", assignedTo: "Garth Jordá", assignedOn: new Date(2018, 10, 1), status: "assets/images/u465.png"},
+        {task: "Meet with Dr. Anthony Bennet and Dr. Xia Nikolaev for interviews", assignedTo: "Mark Seward", assignedOn: new Date(2018, 10, 2), status: "assets/images/u467.png"},
+        {task: "Profile the new Pharmacy department", assignedTo: "Gwalchmei Babin", assignedOn: new Date(2018, 10, 3), status: "assets/images/u467.png"},
+      ]},
+    ]);
+  }
+
   getAccountTeams(): Observable<any> {
     return of([
       {id:1, name: "Almira Merlin", role:"Sales Representative", email: "amerlin@nefit.com", phone:"301 253 9074", img: "assets/images/u703.png"},

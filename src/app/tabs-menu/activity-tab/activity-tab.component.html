@@ -22,7 +22,7 @@
             <h3>Recent Interactions</h3>
             <p-checkbox name="groupname" value="val1" label="My interactions only"></p-checkbox>
             <p>&nbsp;</p>
-            <p-table  [responsive]="true">
+            <p-table  [responsive]="true" [value]="interactions">
                 <ng-template pTemplate="header">
                     <tr>
                         <th>Date</th>
@@ -30,21 +30,11 @@
                         <th>Representative</th>
                     </tr>
                 </ng-template>
-                <ng-template pTemplate="body">
+                <ng-template pTemplate="body" let-interaction>
                     <tr>
-                        <td>09/11/2018</td>
-                        <td>Call</td>
-                        <td>Jia Girard</td>
-                    </tr>
-                    <tr>
-                        <td>09/11/2018</td>
-                        <td>Sample</td>
-                        <td>Russel Peter</td>
-                    </tr>
-                    <tr>
-                        <td>09/11/2018</td>
-                        <td>Call</td>
-                        <td>John Trovolta</td>
+                        <td>{{interaction.date.toDateString()}}</td>
+                        <td>{{interaction.type}}</td>
+                        <td>{{interaction.representative}}</td>
                     </tr>
                 </ng-template>
             </p-table>
@@ -56,7 +46,7 @@
         <div class="p-md-12">
             <h3>Initiatives</h3>
             <div class="initiatives">
-                <p-panel toggler="header" toggleable="true" collapsed="true" expandIcon collapseIcon>
+                <p-panel *ngFor="let initiative of initiatives" toggler="header" toggleable="true" collapsed="true" expandIcon collapseIcon>
                     <p-header class="p-grid">
                         <div class="p-md-6">
                             <div class="p-grid p-align-center">
@@ -65,21 +55,21 @@
                                 </div>
                                 <div class="p-md-11">                            
                                     <div class="init-header-heading">Strategy</div>
-                                    <div>Coordinate functions and expertise with all internal stakeholders</div>
+                                    <div>{{initiative.strategy}}</div>
                                 </div>
                             </div>
                         </div>
                         <div class="p-md-3">
                             <div class="init-header-heading">Tactic Owner</div>
-                            <div>Fedir Trucco</div>
+                            <div>{{initiative.owner}}</div>
                         </div>
                         <div class="p-md-2">
                             <div class="init-header-heading">Due Date</div>
-                            <div>07/20/18</div>
+                            <div>{{initiative.due.toDateString()}}</div>
                         </div>
                         <div class="p-md-1">
                             <div class="init-header-heading">Status</div>
-                            <div><img src="assets/images/u465.png"></div>
+                            <div><img [src]="initiative.status"></div>
                         </div>
                     </p-header>
                     <div class="p-grid">
@@ -96,101 +86,18 @@
                             <div class="init-header-heading">Status</div>
                         </div>
                     </div>
-                    <div class="p-grid">
+                    <div class="p-grid" *ngFor="let task of initiative.tasks">
                         <div class="p-md-6">
-                            <div>Email new Head of Oncology</div>
+                            <div>{{task.task}}</div>
                         </div>
                         <div class="p-md-3">
-                            <div>Garth Jordá</div>
+                            <div>{{task.assignedTo}}</div>
                         </div>
                         <div class="p-md-2">
-                            <div>02/26/18</div>
+                            <div>{{task.assignedOn.toDateString()}}</div>
                         </div>
                         <div class="p-md-1">
-                            <div><img src="assets/images/u465.png"></div>
-                        </div>
-                    </div>
-                    <div class="p-grid">
-                        <div class="p-md-6">
-                            <div>Meet with Dr. Anthony Bennet and Dr. Xia Nikolaev for interviews</div>
-                        </div>
-                        <div class="p-md-3">
-                            <div>Mark Seward</div>
-                        </div>
-                        <div class="p-md-2">
-                            <div>01/15/18</div>
-                        </div>
-                        <div class="p-md-1">
-                            <div><img src="assets/images/u467.png"></div>
-                        </div>
-                    </div>
-                </p-panel>
-                <p-panel toggler="header" toggleable="true" collapsed="true" expandIcon collapseIcon>
-                    <p-header class="p-grid">
-                        <div class="p-md-6">
-                            <div class="p-grid p-align-center">
-                                <div class="p-md-1">
-                                    <i class="pi pi-chevron-right"></i>
-                                </div>
-                                <div class="p-md-11">                            
-                                    <div class="init-header-heading">Strategy</div>
-                                    <div>Establish governance system for 2018 initiatives</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="p-md-3">
-                            <div class="init-header-heading">Tactic Owner</div>
-                            <div>Josephine Sung</div>
-                        </div>
-                        <div class="p-md-2">
-                            <div class="init-header-heading">Due Date</div>
-                            <div>08/31/18</div>
-                        </div>
-                        <div class="p-md-1">
-                            <div class="init-header-heading">Status</div>
-                            <div><img src="assets/images/u468.png"></div>
-                        </div>
-                    </p-header>
-                    <div class="p-grid">
-                        <div class="p-md-6">
-                            <div class="init-header-heading">Task Details</div>
-                        </div>
-                        <div class="p-md-3">
-                            <div class="init-header-heading">Assigned To</div>
-                        </div>
-                        <div class="p-md-2">
-                            <div class="init-header-heading">Date Assigned</div>
-                        </div>
-                        <div class="p-md-1">
-                            <div class="init-header-heading">Status</div>
-                        </div>
-                    </div>
-                    <div class="p-grid">
-                        <div class="p-md-6">
-                            <div>Email new Head of Oncology</div>
-                        </div>
-                        <div class="p-md-3">
-                            <div>Garth Jordá</div>
-                        </div>
-                        <div class="p-md-2">
-                            <div>02/26/18</div>
-                        </div>
-                        <div class="p-md-1">
-                            <div><img src="assets/images/u465.png"></div>
-                        </div>
-                    </div>
-                    <div class="p-grid">
-                        <div class="p-md-6">
-                            <div>Meet with Dr. Anthony Bennet and Dr. Xia Nikolaev for interviews</div>
-                        </div>
-                        <div class="p-md-3">
-                            <div>Mark Seward</div>
-                        </div>
-                        <div class="p-md-2">
-                            <div>01/15/18</div>
-                        </div>
-                        <div class="p-md-1">
-                            <div><img src="assets/images/u467.png"></div>
+                            <div><img [src]="task.status"></div>
                         </div>
                     </div>
                 </p-panel>
