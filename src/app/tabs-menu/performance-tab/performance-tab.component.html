@@ -3,17 +3,20 @@
     <div class="p-grid">
         <div class="p-md-6">
             <h3>Sales</h3>
-            <p>Taylor Medical Center accounts for 10% of Xyngyta and 30% of Zerexime
-                TRx sales in your territory in the past 6 months.
+            <p>Taylor Medical Center accounts for {{accountPerform[0].xyngyta}}% of Xyngyta and {{accountPerform[0].zerexime}}% of Zerexime
+                TRx sales in your territory in the past {{selectedDuration.code}} months .
             </p>
+            <div *ngFor="let item of selectedDuration | keyvalue">
+                {{item.key}}:{{item.value}}
+              </div>
         </div>
         <div class="p-md-6 right-content">
             <h3>
-                <span class="sales-num">3/</span>
-                <span class="sales-num-outof">7</span>
+                <span class="sales-num">{{accountPerform[0].currentPosition}}/</span>
+                <span class="sales-num-outof">{{accountPerform[0].totalPositions}}</span>
             </h3>
             <p class="performance-mostvalue">
-                Taylor Medical Center is the 3rd most valuable account in
+                Taylor Medical Center is the {{accountPerform[0].currentPosition}}rd most valuable account in
                 your territory.
             </p>
         </div>
@@ -23,13 +26,13 @@
         <div class="p-md-6">
             <img src="assets/images/u208.png">
             <div>
-                <p-dropdown [options]="durations" [(ngModel)]="selectedDuration" optionLabel="name"></p-dropdown>
+                <p-dropdown [options]="accountPerform[0].durations" [(ngModel)]="selectedDuration" optionLabel="name"></p-dropdown>
             </div>
         </div>
         <div class="p-md-6">
             <img src="assets/images/u209.png">
             <div>
-                <p-dropdown [options]="durations" [(ngModel)]="selectedDuration" optionLabel="name"></p-dropdown>
+                <p-dropdown [options]="accountPerform[0].durations" [(ngModel)]="selectedDuration" optionLabel="name"></p-dropdown>
             </div>
         </div>
     </div>
@@ -40,14 +43,14 @@
                 <span class="map-nrx left-content">Total NRx: 55</span>
                 <span class="right-content"><i class="fa fa-arrow-up"></i> 28% PTD</span>
             </div>
-            <p-chart type="line" [data]="data1" [options]="options"></p-chart>
+            <p-chart type="line" [data]="accountPerform[0].data1" [options]="options"></p-chart>
         </div>
         <div class="p-md-6">
             <div class="p-grid p-md-12 p-justify-between">
                 <span class="map-nrx">Total NRx: 245</span>
                 <span class=""><i class="fa fa-arrow-up"></i> 10% PTD</span>
             </div>
-            <p-chart type="line" [data]="data2" [options]="options"></p-chart>
+            <p-chart type="line" [data]="accountPerform[0].data2" [options]="options"></p-chart>
         </div>
     </div>
     <p>&nbsp;</p>
@@ -57,14 +60,14 @@
                 <span class="map-nrx">Total TRx: 55</span>
                 <span class=""><i class="fa fa-arrow-up"></i> 28% PTD</span>
             </div>
-            <p-chart type="line" [data]="data1" [options]="options"></p-chart>
+            <p-chart type="line" [data]="accountPerform[0].data1" [options]="options"></p-chart>
         </div>
         <div class="p-md-6">
             <div class="p-grid p-md-12 p-justify-between">
                 <span class="map-nrx">Total TRx: 245</span>
                 <span class=""><i class="fa fa-arrow-up"></i> 10% PTD</span>
             </div>
-            <p-chart type="line" [data]="data2" [options]="options"></p-chart>
+            <p-chart type="line" [data]="accountPerform[0].data2" [options]="options"></p-chart>
         </div>
     </div>
     <p>&nbsp;</p>
@@ -74,14 +77,14 @@
                 <span class="map-nrx">Market Share: 55</span>
                 <span class=""><i class="fa fa-arrow-up"></i> 28% PTD</span>
             </div>
-            <p-chart type="line" [data]="data1" [options]="options"></p-chart>
+            <p-chart type="line" [data]="accountPerform[0].data1" [options]="options"></p-chart>
         </div>
         <div class="p-md-6">
             <div class="p-grid p-md-12 p-justify-between">
                 <span class="map-nrx">Market Share: 245</span>
                 <span class=""><i class="fa fa-arrow-up"></i> 10% PTD</span>
             </div>
-            <p-chart type="line" [data]="data2" [options]="options"></p-chart>
+            <p-chart type="line" [data]="accountPerform[0].data2" [options]="options"></p-chart>
         </div>
     </div>
 </div>

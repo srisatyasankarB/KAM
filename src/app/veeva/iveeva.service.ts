@@ -9,5 +9,6 @@ export interface IVeevaService {
     getAccounts(): Observable<any>;
     getStakeholders(): Observable<any>;
     getAccountProf(): Observable<any>;
+    getPerformanc(): Observable<any>;
     getInitiatives(): Observable<any>;
 }

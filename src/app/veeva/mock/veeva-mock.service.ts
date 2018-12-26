@@ -98,4 +98,39 @@ export class VeevaMockService implements IVeevaService {
       {id:9, name: "Rochester Center", img: "assets/images/u1439.png"},
     ]);
   }
+  
+  getPerformanc(): Observable<any> {
+    return of([
+      {id:1, xyngyta: "10", zerexime: "30",currentPosition:"3",totalPositions:"7",data1:{
+        labels: ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL'],
+        datasets: [
+            {
+                label: 'First Dataset',
+                data: [6, 3, 8, 2, 5, 10, 25],
+                fill: false,
+                borderColor: '#4bc0c0',
+            }
+        ]
+    },data2 :{
+      labels: ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL'],
+      datasets: [
+          {
+              label: 'First Dataset',
+              data: [6, 3, 8, 2, 5, 10, 25],
+              fill: false,
+              borderColor: 'rgba(245, 139, 21, 1)',
+          }
+      ]
+  },durations : [
+    {name: 'Period to Date', code: '0'},
+    {name: '1', code: '1'},
+    {name: '2', code: '2'},
+    {name: '3', code: '3'},
+    {name: '4', code: '4'},
+    {name: '5', code: '5'},
+    {name: '6', code: '6'}
+]
+}
+      ]);
+  }
 }
