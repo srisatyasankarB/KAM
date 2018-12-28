@@ -6,9 +6,6 @@
             <p>Taylor Medical Center accounts for {{accountPerform[0].xyngyta}}% of Xyngyta and {{accountPerform[0].zerexime}}% of Zerexime
                 TRx sales in your territory in the past {{selectedDuration.code}} months .
             </p>
-            <div *ngFor="let item of selectedDuration | keyvalue">
-                {{item.key}}:{{item.value}}
-              </div>
         </div>
         <div class="p-md-6 right-content">
             <h3>

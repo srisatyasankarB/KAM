@@ -1,27 +1,16 @@
 # TylorMedicalCenter
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.0.
+Angular version 7.1.0.
+base href in index.html should be set to "<base href="/">" on local.
+base href in index.html should be set to "
+<script>
+document.write('<base href="' + String(document.location).replace(String(document.location).substr(String(document.location).indexOf("index.html")), '') + '">')
+</script>" while deploying to Veeva environment.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Run `ng serve -c mock` for a dev server to run using mock service. Run `ng serve` for a dev server to run using actual service fetching data from Veeva. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Run `ng build -c mock --prod` to build the project using mock service for data. Run `ng build --prod` to build the project using actual service for Veeva data. The build artifacts will be stored in the `dist/` directory.

@@ -26,11 +26,8 @@ export class PerformanceTabComponent implements OnInit {
 
   ngOnInit() {
     this.PerformanceTabService.getPerformanceData().subscribe((data: any) => {
-        console.log(data);
       this.accountPerform = data.accountPerfom;
-   
-       });
-       console.log(this.selectedDuration);
+    });
   }
 
       
